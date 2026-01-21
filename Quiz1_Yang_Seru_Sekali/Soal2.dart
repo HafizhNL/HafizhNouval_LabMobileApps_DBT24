@@ -4,7 +4,7 @@ import "dart:math";
 void main () {
   // stdout.write(object)
   // String input? = stdin.readLineSync();
-  List play = ["Rock", "Paper", "Scissors"];
+  List play = ["Paper", "Rock", "Scissors"];
 
   final random = Random();
   int ranNumber = random.nextInt(2);
@@ -15,7 +15,9 @@ void main () {
   print(input);
   print(answer);
 
-  // if (input == )
+  if (input > play) {
+    
+  }
   
 
 }
