@@ -1,23 +1,30 @@
 import "dart:io";
 import "dart:math";
 
-void main () {
-  // stdout.write(object)
-  // String input? = stdin.readLineSync();
-  List play = ["Paper", "Rock", "Scissors"];
+void main() {
+  List<String> play = ["Rock", "Paper", "Scissors"];
+  String computerChoice = play[Random().nextInt(3)];
 
-  final random = Random();
-  int ranNumber = random.nextInt(2);
+  print("Pilihan Anda (Rock/Paper/Scissors): ");
+  String? userChoice = stdin.readLineSync();
 
-  String answer = play[ranNumber];
-
-  String? input = stdin.readLineSync();
-  print(input);
-  print(answer);
-
-  if (input > play) {
-    
+  if (userChoice == null || userChoice.isEmpty) {
+    print("Input tidak valid!");
+    return;
   }
-  
 
+  print("\nPilihan Anda: $userChoice");
+  print("Pilihan Komputer: $computerChoice\n");
+
+  if (userChoice == computerChoice) {
+    print("SERI!");
+  } else if (
+    (userChoice == "Rock" && computerChoice == "Scissors") ||
+    (userChoice == "Scissors" && computerChoice == "Paper") ||
+    (userChoice == "Paper" && computerChoice == "Rock")
+  ) {
+    print("ANDA MENANG!");
+  } else {
+    print("ANDA KALAH!");
+  }
 }

@@ -2,24 +2,26 @@ import "dart:io";
 import "dart:math";
 
 void main() {
-  final random = Random();
-  int? ranNumber = random.nextInt(100);
-  int? percobaan;
-  // print(ranNumber);
+  int angka = Random().nextInt(100) + 1;
+  int percobaan = 0;
 
-  int? input = stdin.readByteSync();
+  print("=== Tebak Angka 1-100 ===\n");
 
-  while True
+  while (true) {
+    print("Tebakan Anda: ");
+    String? input = stdin.readLineSync();
+    int tebak = int.parse(input!);
 
-  // for (int i = 0; i < 101; i++) {
-  //   // print(i);
-  //   if (input == ranNumber) {
-  //     print("Jawaban benar = ${ranNumber}");
-  //   } else {
-  //     print("gagal, ulang lagi");
-  //   }
-  //   // } else {
-  //   //   percobaan += 1;
-  //   // }
-  // }
+    percobaan++;
+
+    if (tebak == angka) {
+      print("\nJawaban benar = $angka");
+      print("Selamat, berhasil menebak setelah $percobaan percobaan");
+      break;
+    } else if (tebak < angka) {
+      print("Terlalu kecil!\n");
+    } else {
+      print("Terlalu besar!\n");
+    }
+  }
 }
